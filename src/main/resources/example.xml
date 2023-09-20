@@ -1,0 +1,16 @@
+<osm>
+    <way>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="4"/>
+    </way>
+    <way>
+        <nd ref="3"/>
+        <nd ref="5"/>
+    </way>
+    <node id="1"/>
+    <node id="2"/>
+    <node id="3"/>
+    <node id="4"/>
+    <node id="5"/>
+</osm>
