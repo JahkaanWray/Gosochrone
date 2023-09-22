@@ -1,6 +1,7 @@
 package org.example;
 
 import org.jgrapht.Graph;
+import org.jgrapht.alg.util.Pair;
 import org.jgrapht.graph.DefaultUndirectedWeightedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.w3c.dom.Document;
@@ -20,7 +21,7 @@ public class RoadGraph {
                 Element elementNode = (Element) nodeList.item(i);
                 String id = elementNode.getAttribute("id");
                 Graph<GraphNode, DefaultWeightedEdge> graph = new DefaultUndirectedWeightedGraph<>(DefaultWeightedEdge.class);
-                graph.addVertex(new GraphNode(id));
+                graph.addVertex(new GraphNode(id,new Pair<>(3.0, 5.0)));
                 System.out.println(elementNode.getTagName() + " id = " + id);
             }
         }

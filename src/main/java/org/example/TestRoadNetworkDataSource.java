@@ -1,18 +1,21 @@
 package org.example;
 
 import org.jgrapht.Graph;
+import org.jgrapht.alg.util.Pair;
 import org.jgrapht.graph.DefaultUndirectedWeightedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
+
+import java.io.File;
 
 public class TestRoadNetworkDataSource implements RoadNetworkDataSource{
 
     @Override
     public Graph<GraphNode, DefaultWeightedEdge> getRoadNetwork() {
         Graph<GraphNode, DefaultWeightedEdge> graph = new DefaultUndirectedWeightedGraph<>(DefaultWeightedEdge.class);
-        GraphNode v1 = new GraphNode("1");
-        GraphNode v2 = new GraphNode("2");
-        GraphNode v3 = new GraphNode("3");
-        GraphNode v4 = new GraphNode("4");
+        GraphNode v1 = new GraphNode("1", new Pair(1.0, 1.0));
+        GraphNode v2 = new GraphNode("2" , new Pair(1.0, 1.0));
+        GraphNode v3 = new GraphNode("3", new Pair(1.0, 1.0));
+        GraphNode v4 = new GraphNode("4",  new Pair(1.0, 1.0));
         graph.addVertex(v1);
         graph.addVertex(v2);
         graph.addVertex(v3);

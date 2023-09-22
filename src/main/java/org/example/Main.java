@@ -11,15 +11,9 @@ public class Main {
     public static void main(String[] args) {
 
         try{
-            File osmFile = new File("src/main/resources/example.xml");
-            XMLParser xmlParser = new XMLParser(osmFile);
-            Document document = xmlParser.parse();
-
-            RoadGraph roads = new RoadGraph(document);
-            System.out.println(roads);
-
-            IsochroneCalculator isochroneCalculator = new IsochroneCalculator(new TestRoadNetworkDataSource());
-            isochroneCalculator.calculateIsochrone(new Pair<>(1.0f, 2.0f), 10f);
+            File osmFile = new File("src/main/resources/export.osm");
+            IsochroneCalculator isochroneCalculator = new IsochroneCalculator(new OSMRoadNetworkDataSource(osmFile));
+            isochroneCalculator.calculateIsochrone(new Pair<>(1.0, 2.0), 10f);
         }catch (Exception e) {
             e.printStackTrace();
         }
